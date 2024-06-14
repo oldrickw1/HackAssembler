@@ -11,8 +11,8 @@ public class Code {
         initMaps();
     }
 
-    public String intToBin(String integerRepr) {
-        return String.format("%16s", Integer.toBinaryString(Integer.parseInt(integerRepr))).replace(" ", "0");
+    public String intToBin(int integerRepr) {
+        return String.format("%16s", Integer.toBinaryString(integerRepr)).replace(" ", "0");
     }
 
     public String comp(String comp) {

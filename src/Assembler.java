@@ -16,15 +16,19 @@ public class Assembler {
             Parser p =	new Parser(br.lines());
 
             // first pass
+            int line = 0;
             while (p.hasMoreLines()) {
                 p.advance();
                 if (p.instructionType() == InstructionType.L_INSTRUCTION) {
-                    st.addEntry(p.symbol(), p.getLineNumber() + 1);
+                    st.addEntry(p.symbol(), line );
+                } else {
+                    line++;
                 }
             }
 
             // second pass
             p.reset();
+            int varCount = 16;
             while (p.hasMoreLines()) {
                 p.advance();
                 InstructionType t =	p.instructionType();
@@ -34,13 +38,12 @@ public class Assembler {
                 else if (t == InstructionType.A_INSTRUCTION) {
                     String s = p.symbol();
                     if (!Character.isDigit(s.charAt(0))) { // if it is symbolic
-                        int address = p.getLineNumber();
-//                        if (!symbolTable.contains(symbol)) {
-//                            symbolTable.addEntry(symbol, address); // Adds the symbol with its address if not present.
-//                            outputfile.write("0" + code.intToBin(st.getAddress(p.symbol)));
-//                        }
+                        if (!st.contains(s)) {
+                            st.addEntry(s, varCount++); // Adds the symbol with its address if not present.
+                        }
+                        bw.write(code.intToBin(st.getAddress(s)));
                     } else {
-                        bw.write(code.intToBin(s));
+                        bw.write(code.intToBin(Integer.parseInt(s)));
                     }
                 }
                 else if (t == InstructionType.C_INSTRUCTION) {

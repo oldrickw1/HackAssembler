@@ -11,10 +11,18 @@ public class SymbolTable {
 
 
     public void addEntry(String symbol, int i) {
-
+        symbolTable.put(symbol, i);
     }
 
-    private Map<String, Integer> populateMap() {
+    public boolean contains(String symbol) {
+        return symbolTable.containsKey(symbol);
+    }
+
+    public int getAddress(String symbol) {
+        return symbolTable.get(symbol);
+    }
+
+    private void populateMap() {
         symbolTable.putAll(Map.of(
                 "SP", 0,
                 "LCL", 1,
@@ -27,6 +35,5 @@ public class SymbolTable {
         for (int i = 0; i <= 15; i++) {
             symbolTable.put("R" + i, i);
         }
-
     };
 }

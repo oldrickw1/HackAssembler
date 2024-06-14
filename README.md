@@ -40,8 +40,8 @@ Plan:
 	- Create stub program and make sure all tests fail.
 	
 
-#### development
-
+#### development (pseudocode)
+``` 
 HackAssembler.java
 // Just a wrapper so that it Assembler's functionality can be tested, and easily used as a CLI program at the same time. 
 + main() {
@@ -107,6 +107,7 @@ SymbolTable.java
 	+addEntry(String symbol, int address)
 	+contains(String symbol):boolean
 	+getAddress(String symbol):int
+```
 	
 InstructionType (enum)	
 

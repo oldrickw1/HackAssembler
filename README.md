@@ -121,3 +121,5 @@ InstructionType (enum)
 12-06 18:07
 - Left on implementing dest, symbol and jump methods in parser. Need to brush up regex skills.
 - Implement Code and SymbolTable
+14-06 15:29
+- Finished assembler. Lost some time on the symbol parts, because didn´t write pseudocode for that: next time don't just dive into the next part, but plan ahead.

@@ -31,7 +31,7 @@ Staged development (proposed approach):
 
 Plan:
 
-***testing***
+#### testing
 - Compile the supplied xxx.asm files with the provided assembler to xxx.hack files. 
 - Use these xxx.hack files as reference to run your tests with. 
 	- Copy reference files to a dir "reference_hack_files".
@@ -40,7 +40,7 @@ Plan:
 	- Create stub program and make sure all tests fail.
 	
 
-***development***
+#### development
 
 HackAssembler.java
 // Just a wrapper so that it Assembler's functionality can be tested, and easily used as a CLI program at the same time. 
@@ -116,7 +116,7 @@ InstructionType (enum)
 
 
 
-Log:
+#### Log:
 12-06 18:07
-- Left on implementing dest, symbol and jump methods in parser. Look up in assembler2 if you can use the regex used there.
+- Left on implementing dest, symbol and jump methods in parser. Need to brush up regex skills.
 - Implement Code and SymbolTable

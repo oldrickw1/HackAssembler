@@ -9,7 +9,7 @@ public class HackAssembler {
 //        }
 //        System.out.println("Running the hack assembler!");
         Assembler a = new Assembler();
-        a.assemble(Path.of("referenceFiles/assemblyCode/AddJustSimpleInstructions.asm"));
+        a.assemble(Path.of("referenceFiles/assemblyCode/Rect.asm"));
 //        a.assemble(args[1]);
 
     }

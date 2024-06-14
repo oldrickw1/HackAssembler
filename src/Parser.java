@@ -32,7 +32,7 @@ public class Parser {
     }
 
     public String symbol() {
-        return currentInstruction.substring(1);
+        return currentInstruction.charAt(0) == '@' ? currentInstruction.substring(1) : currentInstruction.substring(1, currentInstruction.length()-1);
     }
 
     public void reset() {

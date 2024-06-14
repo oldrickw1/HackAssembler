@@ -14,15 +14,14 @@ public class Assembler {
             BufferedReader br = Files.newBufferedReader(path)
         ) {
             Parser p =	new Parser(br.lines());
-//            // first pass
-//            while (p.hasMoreLines()) {
-//                p.advance();
-//                if (p.instructionType() == InstructionType.L_INSTRUCTION) {
-//                    st.addEntry(p.symbol(), p.getLineNumber()+1);
-//                }
-//                add label + address to symboltable.
-//
-//
+
+            // first pass
+            while (p.hasMoreLines()) {
+                p.advance();
+                if (p.instructionType() == InstructionType.L_INSTRUCTION) {
+                    st.addEntry(p.symbol(), p.getLineNumber() + 1);
+                }
+            }
 
             // second pass
             p.reset();

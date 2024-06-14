@@ -107,9 +107,9 @@ SymbolTable.java
 	+addEntry(String symbol, int address)
 	+contains(String symbol):boolean
 	+getAddress(String symbol):int
-```
 	
 InstructionType (enum)	
+```
 
 
 
